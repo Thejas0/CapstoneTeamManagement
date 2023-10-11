@@ -17,6 +17,7 @@ const App = () => {
         <div>
           <Navbar />
           <Routes>
+            {/* HII */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<Home />}></Route>
             {/* <Route index element={<Home />} /> */}
