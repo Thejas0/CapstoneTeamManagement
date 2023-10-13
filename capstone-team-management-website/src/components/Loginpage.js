@@ -57,27 +57,32 @@ const LoginPage = () => {
      
       <div style={{ height: '20px', }}></div>
       <form onSubmit={handleLogin}>
-        <div >
-          {/* <label>Username:</label> */}
+      <input type="text" placeholder='Username' required 
+                    onChange={(e) => setUsername(e.target.value)}/>
+                    <br/>
+                    <br/>
+
+                    <input type="password" placeholder='password' name="password" required 
+                    onChange={(e) => setPassword(e.target.value)} />
+        {/* <div >
           <input className='input'
             type="text"
             placeholder='UserName'
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            m
+            
           />
         </div>
-      <div style={{ height: '10px', }}></div>
+      <div style={{ height: '10px', }}></div> */}
 
-        <div>
-          {/* <label>Password:</label> */}
+        {/* <div>
           <input className='input'
             type="password"
             placeholder='Password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
+        </div> */}
       <div style={{ height: '20px', }}></div>
 
         <button className ="login-btn" type="submit">Login</button>
