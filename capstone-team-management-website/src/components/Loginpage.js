@@ -2,7 +2,8 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../App';
 import { useNavigate } from 'react-router-dom'; // Import useHistory
-
+import { useState } from 'react';
+import './Loginpage.css';
 //const LoginPage = () => {
   // Implement your login logic here
   //const {state , dispatch} = useContext(UserContext);
@@ -19,6 +20,11 @@ import { useNavigate } from 'react-router-dom'; // Import useHistory
 const LoginPage = () => {
   const { state, dispatch } = useContext(UserContext);
   const navigate = useNavigate(); // Access the history object
+
+   // Define state for the username, password, and error message
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -38,13 +44,50 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h2>Login Page</h2>
+    // <div>
+    //   <h2>Login Page</h2>
+    //   <form onSubmit={handleLogin}>
+    //     {/* Your login form inputs */}
+    //     <button type="submit">Login</button>
+    //   </form>
+    // </div>
+  
+   <div  className="coverp">
+     <h2>Login Page</h2>
+     
+      <div style={{ height: '20px', }}></div>
       <form onSubmit={handleLogin}>
-        {/* Your login form inputs */}
-        <button type="submit">Login</button>
+        <div >
+          {/* <label>Username:</label> */}
+          <input className='input'
+            type="text"
+            placeholder='UserName'
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            m
+          />
+        </div>
+      <div style={{ height: '10px', }}></div>
+
+        <div>
+          {/* <label>Password:</label> */}
+          <input className='input'
+            type="password"
+            placeholder='Password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+      <div style={{ height: '20px', }}></div>
+
+        <button className ="login-btn" type="submit">Login</button>
       </form>
+      {error && <div style={{ color: 'red' }}>{error}</div>}
     </div>
+  
+
+
+
   );
 };
 
