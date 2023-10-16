@@ -12,6 +12,9 @@ import LoginPage from './components/Loginpage';
 //import LogoutPage from './components/Logoutpage';
 import { initialState,reducer } from './reducer/UseReducer';
 import RegisterPage from './components/Registerpage';
+import './App.css'
+import InviteCard from './components/InviteCard';
+import { Invites } from './components/Invites';
 
 export const UserContext=createContext();
 
@@ -53,8 +56,8 @@ const App = () => {
     
     <UserContext.Provider value={{state,dispatch}}>
     <AuthProvider>
-      <Router>
-        <div>
+      <Router >
+        <div className ="app-cover">
           <Navbar />
           <useRefreshRedirect />
           <Routes>
@@ -63,6 +66,7 @@ const App = () => {
             <Route path="/register" element={<RegisterPage />} />
             {/*<Route index element={<Home />} />*/}
             <Route path="/faculty" element={<Faculty />} />
+            <Route path="/invites" element={<Invites />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/project" element={<Projects />} />
             <Route path="/teaminfo" element={<TeamInfo />} />

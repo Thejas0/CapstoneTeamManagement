@@ -4,14 +4,14 @@ import './Faculty.css'; // Import the CSS file for styling
 function Faculty() {
   const [searchTerm, setSearchTerm] = useState('');
   const [facultyMembers, setFacultyMembers] = useState([
-    { name: 'A', domain: 'Computer Science' },
-    { name: 'B', domain: 'Computer Science' },
-    { name: 'C', domain: 'Computer Science' },
-    { name: 'D', domain: 'Computer Science' },
-    { name: 'E', domain: 'Computer Science' },
-    { name: 'F', domain: 'Computer Science' },
-    { name: 'G', domain: 'Computer Science' },
-    { name: 'H', domain: 'Computer Science' },
+    { name: 'A', id:'F21Pes',domain: 'Computer Science' },
+    { name: 'B', id:'F21Pes',domain: 'Computer Science' },
+    { name: 'C', id:'F21Pes',domain: 'Computer Science' },
+    { name: 'D', id:'F21Pes',domain: 'Computer Science' },
+    { name: 'E', id:'F21Pes',domain: 'Computer Science' },
+    { name: 'F', id:'F21Pes',domain: 'Computer Science' },
+    { name: 'G', id:'F21Pes',domain: 'Computer Science' },
+    { name: 'H', id:'F21Pes',domain: 'Computer Science' },
     // Add more faculty members as needed
   ]);
 
@@ -21,7 +21,7 @@ function Faculty() {
 
   return (
     <div>
-      <h2 className='FTitle'>Faculty Page</h2>
+      
       <div className="search-bar">
         <input
           type="text"
@@ -35,10 +35,14 @@ function Faculty() {
       <div className="faculty-list">
         {facultyMembers.map((faculty, index) => (
           <div key={index} className="faculty-item">
+            <div className = "column-display">
             <h3 className='FName'>{faculty.name}</h3>
+            <p className='FId'> {faculty.id}</p>
+
             <p className='FDomain'>Domain: {faculty.domain}</p>
+            </div>
             <button className="invite-button">Invite</button>
-            {index < facultyMembers.length - 1 && <hr />} {/* Separator line except for the last faculty */}
+            {/* {index < facultyMembers.length - 1 && <hr />} Separator line except for the last faculty */}
           </div>
         ))}
       </div>
