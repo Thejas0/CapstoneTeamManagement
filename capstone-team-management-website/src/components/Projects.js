@@ -51,17 +51,18 @@ function Projects() {
         <input
           type="text"
           placeholder="Search projects..."
+          className="ProjSearchBar"
           value={searchTerm}
           onChange={handleSearch}
         />
-        <button className='SBut'>Search</button>
+        <button className='ProjSearch'>Search</button>
       </div>
-      <hr /> {/* Separator line */}
+      {/*<hr />*} {/* Separator line */}
       {projects.map((project, index) => (
-        <div key={index} className='ProjectsInfo'>
+        <div key={index} className="project-box">
           <h3 className='ProjTitle'>{project.title}</h3>
-          <p className='ProjDesc'>{project.description}</p>
-          {index < projects.length - 1 && <hr />} {/* Separator line except for the last project */}
+          <p className="ProjDesc">{project.description}</p>
+          {/*index < projects.length - 1 && <hr />*/} {/* Separator line except for the last project */}
         </div>
       ))}
     </div>
